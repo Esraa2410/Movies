@@ -1,0 +1,45 @@
+<div class="container w-75">
+  <h1>login form</h1>
+
+  <form [formGroup]="loginForm"  (ngSubmit)="makeLogin(loginForm)" >
+    <label>email:</label>
+    <input formControlName="email" type="email" class="form-control mb-3" />
+    <p
+      *ngIf="
+        loginForm.controls['email'].invalid &&
+        loginForm.controls['email'].touched
+      "
+      class="text-danger"
+    >
+      error
+    </p>
+
+    <label>password:</label>
+    <input
+      formControlName="password"
+      type="password"
+      class="form-control mb-3"
+    />
+    <p
+      *ngIf="
+        loginForm.controls['password'].invalid &&
+        loginForm.controls['password'].touched
+      "
+      class="text-danger"
+    >
+      error
+    </p>
+
+    <button
+      [disabled]="loginForm.invalid && loginForm.touched"
+      class="btn btn-info"
+    >
+      Login
+    </button>
+    <h1 class="text-danger">{{message}}</h1>
+
+  </form>
+</div>
+
+
+

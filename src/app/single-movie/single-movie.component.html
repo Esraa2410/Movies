@@ -1,0 +1,34 @@
+<p>single-movie works!</p>
+
+
+<div *ngIf="recieved ;else alternate"  class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div>
+        <img
+          [src]="
+            'https://image.tmdb.org/t/p/w500' + singliepMovieObj.poster_path
+          "
+          class="w-100"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div>
+        <h1>{{ singliepMovieObj.title }}</h1>
+        <p>{{ singliepMovieObj.overview }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #alternate>
+  <h1>no movies yet...</h1>
+
+</ng-template>
+
+

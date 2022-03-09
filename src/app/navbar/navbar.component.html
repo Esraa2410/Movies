@@ -1,0 +1,49 @@
+<div class=" mynav  shadow  ">
+ <div class="container d-flex justify-content-between py-2">
+    <ul class="d-flex w-50  list-unstyled justify-content-between ">
+      <li class="logo">Noxe</li>
+
+      <li *ngIf="!enableNavbar" [routerLinkActive]="['bg-danger' ]"  routerLink="register" >
+        register
+      </li>
+      <li *ngIf="!enableNavbar" [routerLinkActive]="['bg-danger' ]"  routerLink="login" >
+        login
+      </li>
+
+      <li  *ngIf="enableNavbar" [routerLinkActive]="['bg-danger' ]"  routerLink="movies" >
+        movies
+      </li>
+      <li *ngIf="enableNavbar"  [routerLinkActive]="['bg-danger' ]" routerLink="tv" >
+        tv show
+      </li>
+      <li *ngIf="enableNavbar" [routerLinkActive]="['bg-danger' ]" routerLink="people" >
+        people
+      </li>
+      <li *ngIf="enableNavbar" [routerLinkActive]="['bg-danger' ]" routerLink="network" >
+        network
+      </li>
+      <li *ngIf="enableNavbar" [routerLinkActive]="['bg-danger' ]" routerLink="settings" >
+        settings
+      </li>
+    </ul>
+
+    <div class="w-50 d-flex justify-content-around">
+      <input type="text" placeholder="search"  >
+
+     <div>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+
+        <span   *ngIf="enableNavbar" >{{ username}}</span>
+
+        <span *ngIf="enableNavbar"  (click)="logOut()" >log out</span>
+     </div>
+    </div>
+ </div>
+</div>
+
+
+7:10
+
+

@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,500;1,300&display=swap');
+
+body{
+  background-color: #131722;
+  color: #fff;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.vote{
+  position: absolute;
+  top: 0;
+  right: -5px;
+  padding: 20px 10px;
+}
+
+.mynav input{
+  border-radius:10px;
+  border: none;
+
+  margin-right: 15px;
+}
+ i{
+  margin: 5px;
+}
+.mynav *{
+  cursor: pointer;
+
+}
+
+span{
+  margin: 10px;
+}

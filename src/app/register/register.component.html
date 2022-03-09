@@ -1,0 +1,66 @@
+<div class="container w-75">
+  <h1>registaration form:</h1>
+
+  <form [formGroup]="userForm" (ngSubmit)="showFormData(userForm)">
+    <label>fname:</label>
+
+    <input formControlName="first_name" type="text" class="form-control mb-3" />
+
+    <!-- <p  *ngIf="userForm.controls['firs_name'].errors!=null"  class="text-danger">error</p> -->
+    <p
+      *ngIf="
+        userForm.controls['first_name'].invalid &&
+        userForm.controls['first_name'].touched
+      "
+      class="text-danger"
+    >
+      <!-- { "minlength": { "requiredLength": 3, "actualLength": 1 }, "pattern": { "requiredPattern": "/^[A-Z]/", "actualValue": "m" } } -->
+      <span *ngIf="userForm.controls['first_name'].errors?.['minlength']"
+        >please at least insert
+        {{userForm.controls['first_name'].errors?.['minlength'].requiredLength}}</span
+      >
+      <span *ngIf="userForm.controls['first_name'].errors?.['pattern']"
+        >please start with capital letter</span
+      >
+    </p>
+
+    <label>last name:</label>
+    <input formControlName="last_name" type="text" class="form-control mb-3" />
+    <p  *ngIf="
+    userForm.controls['last_name'].invalid &&
+    userForm.controls['last_name'].touched
+  " class="text-danger">error</p>
+
+    <label>age:</label>
+    <input formControlName="age" type="number" class="form-control mb-3" />
+    <p *ngIf="
+    userForm.controls['age'].invalid &&
+    userForm.controls['age'].touched
+  " class="text-danger">error</p>
+
+    <label>email:</label>
+    <input formControlName="email" type="email" class="form-control mb-3" />
+    <p *ngIf="
+    userForm.controls['email'].invalid &&
+    userForm.controls['email'].touched
+  "class="text-danger">error</p>
+
+    <label>password:</label>
+    <input
+      formControlName="password"
+      type="password"
+      class="form-control mb-3"
+    />
+    <p *ngIf="
+    userForm.controls['password'].invalid &&
+    userForm.controls['password'].touched
+  " class="text-danger">error</p>
+
+    <button  [disabled]="userForm.invalid && userForm.touched" class="btn btn-info">register</button>
+
+    <h1 class="text-danger">{{msg}}</h1>
+  </form>
+</div>
+
+<!--
+[disabled]="userForm.invalid && userForm.touched"  -->
